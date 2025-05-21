@@ -137,7 +137,7 @@
     btn.disabled = true;
     btn.textContent = "Processing...";
 
-    emailjs.send("service_3zto5s5", "template_yfelh4s", templateParams)
+    emailjs.send("service_3zto5s5", "__ejs-test-mail-service__", templateParams)
       .then(function (response) {
         alert("Order confirmed! Check your inbox.");
         localStorage.removeItem('cart');
