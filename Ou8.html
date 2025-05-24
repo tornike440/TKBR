@@ -256,57 +256,68 @@ footer {
   background-color: #000;
   color: #fff;
 }
+.thumbnails img:hover {
+        border: 2px solid #ff5252;
+      }
 
+      .thumbnail {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .thumbnail:hover {
+        transform: scale(3) translateX(20px) translateY(0px);
+      }
   </style>
 </head>
 <body>
 
   <div class="topbar">
     <div>
-      <img src="/gwwwww/georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
+      <img src="georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
       Georgia (CAD $)
     </div>
     <div>English</div>
   </div>
 
     <header>
-      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
+      <div class="logo"><a href="hw.html">TKBR</a></div>
       <nav>
         <ul>
           <li class="shop-item">
             <span>Shop ▼</span>
             <div class="shop-dropdown">
               <ul id="dropdown-list">
-                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-                <li><a href="/gwwwww/Outerwear.html">Outerwear</a></li>
-                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
+                <li><a href="tshirts.html">T-Shirts</a></li>
+                <li><a href="hoodies.html">Hoodies</a></li>
+                <li><a href="zip.html">zip-ups</a></li>
+                <li><a href="Outerwear.html">Outerwear</a></li>
+                <li><a href="bottoms.html">Bottoms</a></li>
               </ul>
             </div>
           </li>
           <li class="shop-item">Track Your Order</li>
-          <li class="shop-item"><a href="/gwwwww/contact.html">Contact</a></li>
-          <li class="shop-item"><a href="/gwwwww/sizehelper.html">Size Help</a></li>
+          <li class="shop-item"><a href="contact.html">Contact</a></li>
+          <li class="shop-item"><a href="sizehelper.html">Size Help</a></li>
         </ul>
       </nav>
       <div class="right-icons">
         <div>CAD</div>
         <div>🔍</div>
-        <div><a href="/gwwwww/contact.html">🛒</a></div>
+        <div><a href="contact.html">🛒</a></div>
       </div>
     </header>
 
   <div class="product-page">
     <div class="thumbnails">
-      <img src="/gwwwww/Outerwear png/Ou/Ouy1.png" alt="thumb1">
-      <img src="/gwwwww/Outerwear png/Ou/Ouy2.png" alt="thumb2">
-      <img src="/gwwwww/Outerwear png/Ou/Ouy3.png" alt="thumb3">
+      <img src="Ouy1.png" alt="thumb1" class="thumbnail">
+      <img src="Ouy2.png" alt="thumb2" class="thumbnail">
+      <img src="Ouy3.png" alt="thumb3" class="thumbnail">
       
     </div>
 
     <div class="main-image">
-      <img src="/gwwwww/Outerwear png/Ou/Ouy1.png" alt="main product">
+      <img src="Ouy1.png" alt="main product">
     </div>
 
     <div class="details">
@@ -332,7 +343,7 @@ footer {
         </select>
       </div>
 
-      <button class="addcart" onclick="addToCart('“All Roads Lead to You” Tee', 34.99, 'tshirt1.png')">Add to Cart</button>
+      <button class="addcart" onclick="addToCart('MONCLER', 79.99, 'Ouy1.png')">Add to Cart</button>
     </div>
   </div>
 

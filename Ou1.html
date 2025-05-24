@@ -256,6 +256,18 @@ footer {
   background-color: #000;
   color: #fff;
 }
+      .thumbnails img:hover {
+        border: 2px solid #ff5252;
+      }
+
+      .thumbnail {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .thumbnail:hover {
+        transform: scale(3) translateX(20px) translateY(0px);
+      }
 
   </style>
 </head>
@@ -263,75 +275,78 @@ footer {
 
   <div class="topbar">
     <div>
-      <img src="/gwwwww/georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
+      <img src="georgia.png" style="border-radius: 50%; max-width: 20px; height: 20px;" alt="georgia">
       Georgia (CAD $)
     </div>
     <div>English</div>
   </div>
 
-    <header>
-      <div class="logo"><a href="/gwwwww/hw.html">TKBR</a></div>
-      <nav>
-        <ul>
-          <li class="shop-item">
-            <span>Shop ▼</span>
-            <div class="shop-dropdown">
-              <ul id="dropdown-list">
-                <li><a href="/gwwwww/tshirts.html">T-Shirts</a></li>
-                <li><a href="/gwwwww/hoodies.html">Hoodies</a></li>
-                <li><a href="/gwwwww/zip.html">zip-ups</a></li>
-                <li><a href="/gwwwww/Outerwear.html">Outerwear</a></li>
-                <li><a href="/gwwwww/bottoms.html">Bottoms</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="shop-item">Track Your Order</li>
-          <li class="shop-item"><a href="/gwwwww/contact.html">Contact</a></li>
-          <li class="shop-item"><a href="/gwwwww/sizehelper.html">Size Help</a></li>
-        </ul>
-      </nav>
-      <div class="right-icons">
-        <div>CAD</div>
-        <div>🔍</div>
-        <div><a href="/gwwwww/cart.html">🛒</a></div>
-      </div>
-    </header>
+  <header>
+    <div class="logo"><a href="hw.html">TKBR</a></div>
+    <nav>
+      <ul>
+        <li class="shop-item">
+          <span>Shop ▼</span>
+          <div class="shop-dropdown">
+            <ul id="dropdown-list">
+              <li><a href="tshirts.html">T-Shirts</a></li>
+              <li><a href="hoodies.html">Hoodies</a></li>
+              <li><a href="zip.html">zip-ups</a></li>
+              <li><a href="Outerwear.html">Outerwear</a></li>
+              <li><a href="bottoms.html">Bottoms</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="shop-item">Track Your Order</li>
+        <li class="shop-item"><a href="contact.html">Contact</a></li>
+        <li class="shop-item"><a href="sizehelper.html">Size Help</a></li>
+      </ul>
+    </nav>
+    <div class="right-icons">
+      <div>CAD</div>
+      <div>🔍</div>
+      <div><a href="cart.html">🛒</a></div>
+    </div>
+  </header>
 
- <div class="product-page">
-  <div class="thumbnails">
-    <img src="/gwwwww/Outerwear png/Ou/Oua1.png" alt="thumb1">
-    <img src="/gwwwww/Outerwear png/Ou/Oua2.png" alt="thumb2">
-    <img src="/gwwwww/Outerwear png/Ou/Oua3.png" alt="thumb3">
-  </div>
-
-  <div class="main-image">
-    <img src="/gwwwww/Outerwear png/Ou/Oua1.png" alt="main product">
-  </div>
-
-      <div class="details">
-        <h2>Patched Fur Jacket</h2>
-        <div>
-          <span class="price">$69.99</span>
-        </div>
-        <p class="par">
-          • High quality cotton<br>
-          • Patched fur collar<br>
-          • Monkey washed denim
-        </p>
-
-        <div>
-          <select class="size-select">
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-          </select>
-        </div>
-
-        <button class="addcart" onclick="addToCart('Patched Fur Jacket', 69.99, '/gwwwww/Outerwear png/Ou/Oua1.png')">Add to Cart</button>
-      </div>
+  <div class="product-page">
+    <div class="thumbnails">
+      <img src="Oua1.png" alt="Thumbnail 1" class="thumbnail">
+      <img src="Oua2.png" alt="Thumbnail 2" class="thumbnail" >
+      <img src="Oua3.png" alt="Thumbnail 3" class="thumbnail">
     </div>
 
+    <div class="main-image">
+      <img id="mainProductImage" src="Oua1.png" alt="main product">
+    </div>
+
+    <div class="details">
+      <h2>Patched Fur Jacket</h2>
+      <div>
+        <span class="price">$69.99</span>
+      </div>
+      <p class="par">
+        • High quality cotton<br>
+        • Patched fur collar<br>
+        • Monkey washed denim
+      </p>
+
+      <div>
+        <select class="size-select">
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+        </select>
+      </div>
+
+      <button class="addcart" onclick="addToCart('Patched Fur Jacket', 69.99, 'Oua1.png')">Add to Cart</button>
+    </div>
+  </div>
+
   <script>
+    function showImage(src) {
+      document.getElementById('mainProductImage').src = src;
+    }
     function addToCart(name, price, image) {
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart.push({ name, price, image });
@@ -343,6 +358,3 @@ footer {
   <footer>
     &copy; 2025 TKBR. All rights reserved.
   </footer>
-
-</body>
-</html> 
