@@ -8,9 +8,9 @@
 /* ========== Base Styles ========== */
 body {
   margin: 0;
-  font-family: fantasy;
   background-color: #121212;
   color: #ffffff;
+  font-family: sans-serif;
 }
 
 a {
@@ -20,6 +20,7 @@ a {
 
 /* ========== Top Bar ========== */
 .topbar {
+  font-family: fantasy;
   display: flex;
   justify-content: flex-end;
   padding: 0.5rem 1rem;
@@ -29,6 +30,7 @@ a {
 }
 
 .topbar div {
+  font-family: fantasy;
   margin-left: 1rem;
   cursor: pointer;
 }
@@ -39,6 +41,7 @@ a {
 
 /* ========== Header ========== */
 header {
+  font-family: fantasy;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,12 +50,14 @@ header {
 }
 
 .logo {
+  font-family: fantasy;
   font-size: 2rem;
   font-weight: bold;
 }
 
 /* ========== Navigation ========== */
 nav ul {
+  font-family: fantasy;
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -61,6 +66,7 @@ nav ul {
 }
 
 nav ul li {
+  font-family: fantasy;
   cursor: pointer;
   position: relative;
 }
@@ -71,11 +77,13 @@ nav ul li:hover {
 
 /* Shop Item Hover Effect */
 .shop-item {
+  font-family: fantasy;
   position: relative;
   z-index: 1;
 }
 
 .shop-item::after {
+  font-family: fantasy;
   content: " ";
   width: 0%;
   height: 2px;
@@ -92,6 +100,7 @@ nav ul li:hover {
 
 /* ========== Dropdown ========== */
 .shop-dropdown {
+  font-family: fantasy;
   opacity: 0;
   position: absolute;
   background-color: #2a2a2a;
@@ -104,11 +113,13 @@ nav ul li:hover {
 }
 
 .shop-item:hover .shop-dropdown {
+  font-family: fantasy;
   opacity: 1;
   pointer-events: auto;
 }
 
 .shop-dropdown ul {
+  font-family: fantasy;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -123,6 +134,7 @@ nav ul li:hover {
 }
 
 #dropdown-list li::after {
+  font-family: fantasy;
   content: " ";
   position: absolute;
   width: 0%;
@@ -141,6 +153,7 @@ nav ul li:hover {
 
 /* ========== Icons ========== */
 .right-icons {
+  font-family: fantasy;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -148,9 +161,11 @@ nav ul li:hover {
 
 .right-icons div {
   cursor: pointer;
+  font-family: fantasy;
 }
 
 .right-icons div:hover {
+  font-family: fantasy;
   opacity: 0.7;
 }
 
@@ -330,7 +345,7 @@ footer {
                 <li><a href="tshirts.html">T-Shirts</a></li>
                 <li><a href="hoodies.html">Hoodies</a></li>
                 <li><a href="zip.html">zip-ups</a></li>
-                <li>Outerwear</li>
+                <li><a href="Outerwear.html">Outerwear</a></li>
                 <li><a href="bottoms.html">Bottoms</a></li>
               </ul>
             </div>
@@ -347,7 +362,7 @@ footer {
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" >
       <h1>Free Shipping Over $70 USD</h1>
       <p>14-Day Money Back Guarantee</p>
     </section>
@@ -392,7 +407,7 @@ footer {
           <label>Join Our Community</label>
           <div class="email">
             <input type="email" placeholder="Email" />
-            <button>Send</button>
+            <a href="contact.html"><button style="background-color: #131313; border-radius: 5px; margin: 5px;">Send</button></a>
           </div>
         </div>
       </div>
@@ -420,7 +435,7 @@ footer {
 
     <!-- damateba -->
 
-    <footer>
+    <footer style="background-color: #151515;">
       <p>&copy; TKBR</p>
       <p>all rights reserved</p>
       <p>2025</p>
@@ -428,14 +443,14 @@ footer {
       <p>Follow us on:</p>
       <p>
         <a href="https://www.facebook.com/tornike.beridze.1213"
-          ><img src="fb.png" class="ftpc" alt="" />Facebook</a
+          ><img src="facebook.png" class="ftpc" alt="" />Facebook</a
         >
         |
         <a href="https://www.instagram.com/tkbr_1q231/"
-          ><img src="instagram.png" class="ftpc" alt="" />Instagram</a
+          ><img src="instagram.svg" class="ftpc" alt="" />Instagram</a
         >
         |
-        <a href="https://github.com/tornike440/GOA-projects"
+        <a href="https://github.com/tornike440/TKBR"
           ><img src="github.png" class="ftpc" alt="" />GitHub</a
         >
       </p>
