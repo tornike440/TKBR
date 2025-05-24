@@ -69,10 +69,29 @@
       color: #ccc;
       margin-top: 2rem;
     }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    body.darkmode button {
+      background-color: #444;
+      color: #fff;
+    }
+    body.darkmode button:hover {
+      background-color: #666;
+    }    
   </style>
 </head>
 <body>
-
+<div style="width:10%; margin-left: 90%; "><button id="theme-toggle">Toggle Dark/white Mode</button></div>
 <div class="container">
   <h1>Payment Details</h1>
   <form id="payment-form">
@@ -150,6 +169,32 @@
         btn.textContent = "Confirm & Pay";
       });
   });
+
+
+
+
+
+
+
+
+  const toggleButton = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            // Apply saved theme on load
+            if (localStorage.getItem("theme") === "dark") {
+              body.classList.add("darkmode");
+            }
+
+            toggleButton.addEventListener("click", () => {
+              body.classList.toggle("darkmode");
+
+              // Save preference
+              if (body.classList.contains("darkmode")) {
+                localStorage.setItem("theme", "dark");
+              } else {
+                localStorage.setItem("theme", "light");
+              }
+            });
 </script>
 
 </body>
