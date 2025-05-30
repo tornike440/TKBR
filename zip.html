@@ -5,366 +5,319 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TKBR</title>
     <style>
-      body {
-        margin: 0;
-        background-color: #fdfdfd;
-        color: #222222;
-        font-family: sans-serif;
-      }
+     body {
+      margin: 0;
+      font-family: fantasy;
+      background-color: #fdfdfd;
+      color: #222;
+    }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-      /* ========== Topbar ========== */
-      .topbar {
-        font-family: fantasy;
-        display: flex;
-        justify-content: flex-end;
-        padding: 0.5rem 1rem;
-        border-bottom: 1px solid #ccc;
-        font-size: 0.9rem;
-        background-color: #eee;
-      }
+    /* ========== Top Bar ========== */
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #ccc;
+      font-size: 0.9rem;
+      background-color: #eee;
+    }
 
-      .topbar div {
-        font-family: fantasy;
-        margin-left: 1rem;
-        cursor: pointer;
-      }
+    .topbar div {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
 
-      .topbar div:hover {
-        text-decoration: underline;
-      }
+    .topbar div:hover {
+      text-decoration: underline;
+    }
 
-      /* ========== Header ========== */
-      header {
-        font-family: fantasy;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem;
-        background-color: #fafafa;
-      }
+    /* ========== Header ========== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #fafafa;
+    }
 
-      .logo {
-        font-family: fantasy;
-        font-size: 2rem;
-        font-weight: bold;
-      }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
 
-      /* ========== Navigation ========== */
-      nav ul {
-        font-family: fantasy;
-        list-style: none;
-        display: flex;
-        gap: 2rem;
-        margin: 0;
-        padding: 0;
-      }
+    /* ========== Navigation ========== */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
 
-      nav ul li {
-        font-family: fantasy;
-        cursor: pointer;
-        position: relative;
-      }
+    nav ul li {
+      cursor: pointer;
+      position: relative;
+    }
 
-      nav ul li:hover {
-        color: #000;
-      }
+    nav ul li:hover {
+      color: #000;
+    }
 
-      .shop-item {
-        font-family: fantasy;
-        position: relative;
-        z-index: 1;
-      }
+    /* Shop Item Hover Effect */
+    .shop-item {
+      position: relative;
+      z-index: 1;
+    }
 
-      .shop-item::after {
-        font-family: fantasy;
-        content: " ";
-        width: 0%;
-        height: 2px;
-        background: #333;
-        display: block;
-        cursor: pointer;
-        transition: width 1.3s;
-        margin-top: 3px;
-      }
+    .shop-item::after {
+      content: " ";
+      width: 0%;
+      height: 2px;
+      background: #333;
+      display: block;
+      cursor: pointer;
+      transition: width 1.3s;
+      margin-top: 3px;
+    }
 
-      .shop-item:hover::after {
-        width: 100%;
-      }
+    .shop-item:hover::after {
+      width: 100%;
+    }
 
-      .shop-dropdown {
-        font-family: fantasy;
-        opacity: 0;
-        position: absolute;
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        padding: 1rem;
-        z-index: 1000;
-        transition: opacity 1s ease;
-        pointer-events: none;
-        color: #222;
-      }
+    /* ========== Dropdown ========== */
+    .shop-dropdown {
+      opacity: 0;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      z-index: 1000;
+      transition: opacity 1s ease;
+      pointer-events: none;
+      color: #222;
+    }
 
-      .shop-item:hover .shop-dropdown {
-        opacity: 1;
-        pointer-events: auto;
-      }
+    .shop-item:hover .shop-dropdown {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-      .shop-dropdown ul {
-        font-family: fantasy;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
+    .shop-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-      #dropdown-list li {
-        position: relative;
-      }
+    /* Dropdown Item Hover Background (Modified) */
+    #dropdown-list li {
+      position: relative;
+    }
 
-      #dropdown-list li::after {
-        font-family: fantasy;
-        content: " ";
-        position: absolute;
-        width: 0%;
-        height: 100%;
-        background: #000;
-        display: block;
-        transition: width 1s;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
+    #dropdown-list li::after {
+      content: " ";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      background: #000;
+      color: #fff;
+      display: block;
+      transition: width 1s;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
 
-      #dropdown-list li:hover::after {
-        width: 100%;
-      }
+    #dropdown-list li:hover::after {
+      width: 100%;
+      color: #fff;
+    }
 
-      /* ========== Right Icons ========== */
-      .right-icons {
-        font-family: fantasy;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
+    /* ========== Icons ========== */
+    .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-      .right-icons div {
-        cursor: pointer;
-        font-family: fantasy;
-      }
+    .right-icons div {
+      cursor: pointer;
+    }
 
-      .right-icons div:hover {
-        opacity: 0.7;
-      }
+    .right-icons div:hover {
+      opacity: 0.7;
+    }
 
-      /* ========== Product Page ========== */
-      .product-page {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 2rem;
-      }
+    .hero {
+      text-align: center;
+      padding: 2rem;
+      background-color: #eee;
+      color: #111;
+    }
 
-      /* ========== Thumbnails ========== */
-      .thumbnails {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 125px;
-      }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+    }
 
-      .thumbnails img {
-        width: 60px;
-        height: 80px;
-        object-fit: cover;
-        border: 1px solid #aaa;
-        cursor: pointer;
-      }
+    .product {
+      flex: 1 1 calc(33% - 2rem);
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      padding: 1rem;
+      text-align: center;
+      transition: 0.4s linear;
+    }
 
-      .thumbnails img:hover {
-        border: 2px solid #ff5252;
-      }
+    .product:hover {
+      transform: scale(1.05);
+      border-color: #888;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-      .thumbnail {
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+    }
 
-      .thumbnail:hover {
-        transform: scale(3) translateX(20px) translateY(0px);
-      }
-
-      /* ========== Main Image ========== */
-      .main-image {
-        flex: 2;
-        text-align: center;
-      }
-
-      .main-image img {
-        max-width: 100%;
-        max-height: 600px;
-        object-fit: contain;
-      }
-
-      /* ========== Details ========== */
-      .details {
-        flex: 2;
-        padding: 0 2rem;
-      }
-
-      /* ========== Price ========== */
-      .price {
-        font-size: 1.5rem;
-        color: #222;
-      }
-
-      .original-price {
-        margin-left: 10px;
-        color: #888;
-        text-decoration: line-through;
-      }
-
-      /* ========== Paragraph ========== */
-      .par {
-        max-width: 400px;
-        border-radius: 5px;
-        color: #333;
-      }
-
-      /* ========== Size Select ========== */
-      .size-select {
-        padding: 10px;
-        font-size: 1rem;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        background-color: #fff;
-        color: #000;
-        cursor: pointer;
-        transition: 0.3s ease;
-      }
-
-      .size-select:hover {
-        background-color: #eee;
-        transform: scale(1.1);
-      }
-
-      /* ========== Add to Cart ========== */
-      .addcart {
-      background-color: #303030;  
+    .addcart {
+      background-color: #000;
       color: #fff;
       border: none;
       border-radius: 15px;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      margin: 15px;
+      transition: transform 0.3s ease;
     }
 
     .addcart:hover {
-      transform: scale(1.1);
-      background-color: #0056b3;
+      transform: scale(1.5);
+      background-color: #222;
     }
 
-      /* ========== Footer ========== */
-      footer {
-        text-align: center;
-        padding: 1rem;
-        background-color: #f0f0f0;
-        color: #222;
-      }
+    .ftpc {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
 
-      /* ========== Dark Mode ========== */
-      body.darkmode {
-        background-color: #121212;
-        color: #ffffff;
-      }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f0f0f0;
+      color: #222;
+    }
 
-      body.darkmode .topbar {
-        background-color: #1e1e1e;
-        border-bottom: 1px solid #333;
-      }
+    .slicer {
+      height: 2px;
+      background-color: #ccc;
+      margin: 10px;
+    }
 
-      body.darkmode .topbar div:hover {
-        text-decoration: underline;
-      }
+    /* ========== Dark Mode ========== */
+    body.darkmode {
+      background-color: #121212;
+      color: #ffffff;
+    }
 
-      body.darkmode header {
-        background-color: #1e1e1e;
-      }
+    body.darkmode .topbar {
+      background-color: #1e1e1e;
+      border-bottom: 1px solid #333;
+    }
 
-      body.darkmode nav ul li:hover {
-        color: #aaa;
-      }
+    body.darkmode header {
+      background-color: #1e1e1e;
+    }
 
-      body.darkmode .shop-item::after {
-        background: #ddded9;
-      }
+    body.darkmode nav ul li:hover {
+      color: #aaa;
+    }
 
-      body.darkmode .shop-dropdown {
-        background-color: #2a2a2a;
-        border: 1px solid #444;
-        color: #fff;
-      }
+    body.darkmode .shop-item::after {
+      background: #ddded9;
+    }
 
-      body.darkmode #dropdown-list li::after {
-        background: #ffffff;
-      }
+    body.darkmode .shop-dropdown {
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      color: #fff;
+    }
 
-      body.darkmode .right-icons div:hover {
-        opacity: 0.7;
-      }
+    body.darkmode #dropdown-list li::after {
+      background: #ffffff;
+    }
 
-      body.darkmode .thumbnails img {
-        border: 1px solid #444;
-      }
+    body.darkmode .right-icons div:hover {
+      opacity: 0.7;
+    }
 
-      body.darkmode .main-image img {
-        background-color: transparent;
-      }
+    body.darkmode .hero {
+      background-color: #222;
+      color: #f5f5f5;
+    }
 
-      body.darkmode .price {
-        color: #ffffff;
-      }
+    body.darkmode .product {
+      background-color: #1a1a1a;
+      border: 1px solid #444;
+    }
 
-      body.darkmode .original-price {
-        color: #888;
-      }
+    body.darkmode .product:hover {
+      border-color: #888;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
 
-      body.darkmode .par {
-        color: #ddd;
-      }
+    body.darkmode .addcart {
+      background-color: #fff;
+      color: #000;
+    }
 
-      body.darkmode .size-select {
-        background-color: #000;
-        color: #fff;
-        border: 1px solid #444;
-      }
+    body.darkmode .addcart:hover {
+      background-color: #ddd;
+    }
 
-      body.darkmode .size-select:hover {
-        background-color: #333;
-      }
+    body.darkmode footer {
+      background-color: #222;
+      color: #fff;
+    }
 
-      body.darkmode .addcart {
-        background-color: #000;
-        color: #fff;
-        border: 1px solid #444;
-      }
-
-      body.darkmode .addcart:hover {
-        background-color: #000;
-      }
-
-      body.darkmode footer {
-        background-color: #000;
-        color: #fff;
-      }
-      button {
+    body.darkmode .slicer {
+      background-color: #444;
+    }
+    #theme-toggle {
+      background-color: #0048ff;
+      color: #222;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    #theme-toggle:hover {
+      background-color: #ddd;
+      color: #000;
+    }
+    body.darkmode #theme-toggle {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+    body.darkmode #theme-toggle:hover {
+      background-color: #555;
+      color: #fff;
+    }   
+    button {
       background-color: #007bff;
       color: white;
       border: none;
@@ -383,6 +336,10 @@
     body.darkmode button:hover {
       background-color: #666;
     }  
+
+
+
+    </style>
 
   </style>
 </head>
@@ -432,43 +389,54 @@
     <section class="products">
     
     <div class="product">
-        <img src="zp1.png" alt="Product 1"/>
-        <h2>Blue Washed Zip-Up</h2>
-        <p>$94.99</p>
-        <button class="addcart" onclick="addToCart('Blue Washed Zip-Up', 94.99, 'zp1.png')">Add to Cart</button>
+      <a href="zp1.html">
+          <img src="zp1.png" alt="Product 1"/>
+          <h2>Blue Washed Zip-Up</h2>
+          <p>$94.99</p>
+          <button class="addcart" onclick="addToCart('Blue Washed Zip-Up', 94.99, 'zp1.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="zp2.png" alt="Product 2"/>
-        <h2>Pink Washed Zip-Up</h2>
-        <p>$94.99</p>
-        <button class="addcart" onclick="addToCart('pink Washed Zip-Up', 94.99, 'zp2.png')">Add to Cart</button>
+      <a href="zp2.html">
+          <img src="zp2.png" alt="Product 2"/>
+          <h2>Pink Washed Zip-Up</h2>
+          <p>$94.99</p>
+          <button class="addcart" onclick="addToCart('pink Washed Zip-Up', 94.99, 'zp2.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="zp3.png" alt="Product 3"/>
-        <h2>Bllue Zip-Up</h2>
-        <p>$74.99</p>
-        <button class="addcart" onclick="addToCart('Blue Zip-Up', 74.99, 'zp3.png')">Add to Cart</button>
+      <a href="zp3.html">
+          <img src="zp3.png" alt="Product 3"/>
+          <h2>Bllue Zip-Up</h2>
+          <p>$74.99</p>
+          <button class="addcart" onclick="addToCart('Blue Zip-Up', 74.99, 'zp3.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="zp4.png" alt="Product 4"/>
-        <h2>Grey Printed Zip-Up</h2>
-        <p>$104.99</p>
-        <button class="addcart" onclick="addToCart('“Grey Printed Zip-Up', 104.99, 'zp4.png')">Add to Cart</button>
+      <a href="zp4.html">
+          <img src="zp4.png" alt="Product 4"/>
+          <h2>Grey Printed Zip-Up</h2>
+          <p>$104.99</p>
+          <button class="addcart" onclick="addToCart('“Grey Printed Zip-Up', 104.99, 'zp4.png')">Add to Cart</button>
+      </a>
     </div>
     <div class="product">
-        <img src="zp5.png" alt="Product 5"/>
-        <h2>Blue Printed Zip-Up</h2>
-        <p>$104.99</p>
-        <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
-        <p style="color: red;">Out of Stock</p>
+      <a href="zp5.html">
+          <img src="zp5.png" alt="Product 5"/>
+          <h2>Blue Printed Zip-Up</h2>
+          <p>$104.99</p>
+          <button class="addcart"  style="text-decoration: line-through;">Add to Cart</button>
+          <p style="color: red;">Out of Stock</p>
+      </a>
     </div>
 
-    
     <div class="product">
-        <img src="zp6.png" alt="Product 6"/>
-        <h2>Printed Zip-Up</h2>
-        <p>$124.99</p>
-        <button class="addcart" onclick="addToCart('Printed Zip-Up', 124.99, 'zp6.png')">Add to Cart</button>
+      <a href="zp6.html">
+          <img src="zp6.png" alt="Product 6"/>
+          <h2>Printed Zip-Up</h2>
+          <p>$124.99</p>
+          <button class="addcart" onclick="addToCart('Printed Zip-Up', 124.99, 'zp6.png')">Add to Cart</button>
+      </a>
     </div>
     </section>
 
